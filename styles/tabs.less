@@ -1,0 +1,103 @@
+// Title
+// -------------------
+
+.left {
+  .tab.active:first-child {
+    background-color: @base-background-color !important;
+    position: relative;
+    color: @YL-active-text-color-light;
+    text-transform: uppercase;
+    line-height: 10px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0px 0px 0px 5px;
+    font-size: 18px;
+  }
+  .inset-panel {
+    background-color: @base-background-color !important;
+  }
+}
+
+// Tabs
+// -------------------
+
+// Displays selectable tabs above the editor.
+// Overrides: atom/tabs
+
+.vertical {
+  .tab-bar {
+    background-color: @tab-bar-background-color;
+    border-bottom: 1px solid @base-border-color;
+
+    .tab {
+      color: @text-color;
+      height: @tab-height;
+      line-height: @tab-height;
+      font-size: @font-size-tab;
+      border-right: 1px solid @tab-border-color;
+      background-color: @tab-background-color;
+      text-transform: uppercase;
+      text-align: center;
+      transition: 0.15s;
+      cursor: pointer;
+      position: relative;
+      z-index: 999;
+
+      .title {
+        padding: 0;
+      }
+
+      &:before {
+        .YL-animate-background(-50px);
+      }
+
+      &:hover {
+        color: @YL-active-text-color;
+
+        &::before {
+          top: 0px;
+        }
+      }
+
+      &.active {
+        color: @YL-active-text-color;
+        //font-weight: bolder;
+        background-color: @tab-background-color-active;
+      }
+
+
+      // Modified Icon (the blue circle) -------------------
+      &.modified:not(:hover) .close-icon {
+        top: 50%;
+        right: @component-padding + 4px; // 4px -> half of icon size
+        margin-top: -3px;
+        border-color: @text-color-info;
+      }
+      &.modified:hover .close-icon {
+        color: currentColor;
+      }
+
+
+      // Close Icon (the X) -------------------
+      .close-icon:hover {
+        color: @YL-active-text-color !important;
+        cursor: pointer;
+      }
+      &.active .close-icon:hover {
+        color: @text-color;
+      }
+
+
+      // Dragging -------------------
+      // Styles get applied while dragging a tab
+      &.is-dragging {
+        background: darken(@tab-background-color, 10%);
+        border-color: transparent;
+        opacity: .5;
+        & .close-icon {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}

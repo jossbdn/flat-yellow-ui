@@ -1,0 +1,78 @@
+
+// Status Bar
+// -------------------
+
+// Located at the bottom.
+// Displays information about the current editor.
+// Overrides: atom/status-bar
+
+// PARAMETINGS
+status-bar .inline-block {
+  margin: 0 !important;
+}
+
+.status-bar {
+  font-size: @font-size;
+  color: @text-color;
+  border-top: 1px solid @base-border-color;
+  background-color: @tree-view-background-color;
+  height: 30px;
+  line-height: 25px;
+  text-transform: uppercase;
+
+  div.status-bar-right, div.status-bar-left {
+
+    // LINKS
+    a {
+
+      padding: 2px 8px;
+      transition: 0.15s;
+      position: relative;
+      margin: 0 !important;
+      z-index: 999;
+
+      &:before {
+        .YL-animate-background(-30px);
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: @YL-active-text-color;
+        //font-weight: bold;
+
+        &:before {
+          top: 0px;
+        }
+      }
+    }
+
+    // GITHUB SECTION
+    .github-StatusBarTileController {
+      margin-left: 10px;
+      cursor: pointer;
+
+      // ARROWS
+      .github-PushPull {
+        margin-left: 10px;
+      }
+
+      .github-ChangedFilesCount {
+        cursor: pointer;
+        margin-left: 5px !important;
+
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+
+    // DIRECTORY
+    .file-info {
+      padding: 0px 5px;
+      position: relative;
+      top: 1px;
+    }
+
+  }
+
+}

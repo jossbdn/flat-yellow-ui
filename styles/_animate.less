@@ -1,0 +1,19 @@
+
+// Animations
+// -------------------
+
+// Located at the bottom.
+// Displays information about the current editor.
+// Overrides: atom/status-bar
+
+.YL-animate-background(@height){
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: @height;
+  height: 100%;
+  background-color: @YL-active;
+  transition: 0.15s;
+  z-index: -9;
+}

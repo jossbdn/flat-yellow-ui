@@ -1,0 +1,18 @@
+{
+  "name": "flat-yellow-ui",
+  "theme": "ui",
+  "version": "2.0.1",
+  "description": "A flat yellow theme for atom",
+  "keywords": [
+    "ui",
+    "theme",
+    "flat",
+    "design",
+    "yellow"
+  ],
+  "repository": "https://github.com/jojo36/flat-yellow-ui",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
